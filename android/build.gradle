@@ -14,8 +14,6 @@ buildscript {
 
 rootProject.allprojects {
     repositories {
-        google()
-        jcenter()
         maven {
             url "https://jitpack.io"
         }
@@ -33,7 +31,6 @@ android {
 }
 
 dependencies {
-    implementation 'ru.rambler.android:swipe-layout:1.1.0'
     implementation 'com.midtrans:uikit:1.29.3-SANDBOX'
     releaseImplementation 'com.midtrans:uikit:1.29.3-SANDBOX'
 
