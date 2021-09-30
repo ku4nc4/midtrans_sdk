@@ -29,15 +29,19 @@ android {
     defaultConfig {
         minSdkVersion 21
     }
-    dependencies {
-        if(rootProject.midtrans_environment == "production") {
-            implementation "com.midtrans:uikit:$midtrans_version"
-        } else {
-            implementation "com.midtrans:uikit:$midtrans_version-SANDBOX"
+
+    flavorDimensions "app"
+    productFlavors {
+        production {
+            dimension "app"
+        }
+        staging {
+            dimension "app"
         }
     }
 }
 
 dependencies {
-
+    productionApi "com.midtrans:uikit:$midtrans_version"
+    stagingApi "com.midtrans:uikit:$midtrans_version-SANDBOX"
 }
