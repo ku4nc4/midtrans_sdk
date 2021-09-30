@@ -1,5 +1,6 @@
 group 'dev.tomykho.midtrans_sdk'
 version '1.0'
+ext.midtrans_version = '1.29.3'
 
 buildscript {
     repositories {
@@ -28,17 +29,15 @@ android {
     defaultConfig {
         minSdkVersion 21
     }
+    dependencies {
+        if(rootProject.midtrans_environment == "production") {
+            roductionImplementation "com.midtrans:uikit:$midtrans_version"
+        } else {
+            implementation "com.midtrans:uikit:$midtrans_version-SANDBOX"
+        }
+    }
 }
 
 dependencies {
-    ext.midtrans_version = '1.29.3'
-    // For using the Midtrans Sandbox
-    implementation "com.midtrans:uikit:$midtrans_version-SANDBOX"
-    // // For using the Midtrans Production
-    productionImplementation "com.midtrans:uikit:$midtrans_version"
 
-//    implementation 'com.midtrans:uikit:1.29.3-SANDBOX'
-//    releaseImplementation 'com.midtrans:uikit:1.29.3'
-
-//    releaseImplementation 'com.midtrans:uikit:1.28.0'
 }
