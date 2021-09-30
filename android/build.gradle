@@ -33,7 +33,7 @@ android {
 dependencies {
     ext.midtrans_version = '1.29.3'
     // For using the Midtrans Sandbox
-    stagingImplementation "com.midtrans:uikit:$midtrans_version-SANDBOX"
+    implementation "com.midtrans:uikit:$midtrans_version-SANDBOX"
     // // For using the Midtrans Production
     releaseImplementation "com.midtrans:uikit:$midtrans_version"
     productionImplementation "com.midtrans:uikit:$midtrans_version"
