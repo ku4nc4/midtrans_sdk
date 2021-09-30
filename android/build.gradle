@@ -33,10 +33,10 @@ android {
 dependencies {
     ext.midtrans_version = '1.29.3'
     // For using the Midtrans Sandbox
-    debugApi "com.midtrans:uikit:$midtrans_version-SANDBOX"
-    stagingApi "com.midtrans:uikit:$midtrans_version-SANDBOX"
+    stagingImplementation "com.midtrans:uikit:$midtrans_version-SANDBOX"
     // // For using the Midtrans Production
-    productionApi "com.midtrans:uikit:$midtrans_version"
+    releaseImplementation "com.midtrans:uikit:$midtrans_version"
+    productionImplementation "com.midtrans:uikit:$midtrans_version"
 
 //    implementation 'com.midtrans:uikit:1.29.3-SANDBOX'
 //    releaseImplementation 'com.midtrans:uikit:1.29.3'
