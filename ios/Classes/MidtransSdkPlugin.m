@@ -37,10 +37,11 @@ FlutterMethodChannel* channel;
 - (void)initWithCall:(FlutterMethodCall*)call result:(FlutterResult)result {
     NSString* clientKey = call.arguments[@"clientKey"];
     NSString* merchantServerURL = call.arguments[@"merchantBaseUrl"];
-    NSString* environmentSelection = call.arguments[@"environment"];
 
-    MidtransServerEnvironment environment = [environmentSelection isEqualToString:@"sandbox"] ? MidtransServerEnvironmentSandbox :  MidtransServerEnvironmentProduction;
-
+    MidtransServerEnvironment environment = MidtransServerEnvironmentProduction;
+    #ifdef DEBUG
+    environment = MidtransServerEnvironmentSandbox;
+    #endif
     [CONFIG setClientKey:clientKey
              environment:environment
        merchantServerURL:merchantServerURL];
